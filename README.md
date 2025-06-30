@@ -1,98 +1,100 @@
-Here's a **GitHub repository description and README template** tailored to your 3-hour hackathon: **“Code & Chaos: The Glitch in the Game”**.
+
+
+### 🔖 **GitHub Repository Description (short)**
+
+> 🛒 *nosales* – An anti-e-commerce experience built in 3 hours. Glitchy carts, fake hacks, meme chaos. Nothing sells, everything breaks.
 
 ---
 
-### 📝 **GitHub Repository Description (short, for the top of the repo)**
-
-> ⚡ A 3-hour hackathon challenge — build something fun, broken, or beautifully glitched. Theme: *A World Out of Sync*.
-
----
-
-### 📄 **README Template**
+### 📄 **README.md**
 
 ````markdown
-# ⚡ Code & Chaos: The Glitch in the Game
+# 🛒 nosales – The Anti-E-Commerce Experience
 
-**Hackathon Project – 3-Hour Challenge**  
-🎯 **Theme**: *A World Out of Sync*
+**Hackathon Project – Code & Chaos: The Glitch in the Game**  
+🎯 **Theme**: *A World Out of Sync*  
+⏱️ Built in under 3 hours  
 
-> An interactive experiment built under tight time pressure, exploring the beauty of glitches, loops, and logical breakdowns.
+> `nosales` is a chaotic take on traditional online shopping — an e-commerce site where **selling never happens the way you expect**. It’s not just broken. It *wants* to be broken.
 
 ---
 
 ## 💡 Concept
 
-Describe your idea in 2–3 sentences.
+What if an e-commerce platform rejected the very concept of conversion?
 
-- What is the glitch or "out of sync" behavior?
-- What inspired the concept?
-- Is it a game? A utility? A visual experience?
+In **nosales**, we built a satirical storefront where every familiar UI pattern is distorted, hijacked, or made *delightfully unusable*. It's a mix of glitch art, meme injection, and UX sabotage, wrapped in a real-time web experience.
+
+---
+
+## 🧪 Features
+
+- 🏀 **Cart Dunking**: Add an item to the cart and watch the cart *grow* to absurd size before slamming the item like a basketball.
+- 💳 **Fake Credit Card Hack**: The payment flow simulates a credit card hijack mid-purchase. Users panic. We laugh.
+- 📺 **Meme-Filled UI**: Buttons hide cursed YouTube Poop and obscure meme audio. Click wisely.
+- 🌈 **Aggressive Contrast Mode**: Hovering certain elements turns the site into a high-contrast accessibility nightmare.
+- ⏱️ **Time-Based Glitches**: The longer you browse, the more the UI breaks — screen flickers, layout shifts, and unpredictable behaviors intensify over time.
 
 ---
 
 ## 🛠️ Tech Stack
 
-List the technologies you used:
-
-- Framework / Language: (e.g. React, Python, Unity, etc.)
-- Tools / Libraries: (e.g. Three.js, Firebase, p5.js)
-- AI Tools (if any): (e.g. ChatGPT prompts, GitHub Copilot)
+- **Frontend**: HTML / CSS / JavaScript (Vanilla or React)
+- **Visual Glitches**: CSS transitions, canvas distortions
+- **Media**: Embedded memes, base64 YouTube rips (local or fetched)
+- **Optional**: JS timers for behavior decay
 
 ---
 
-## 🎮 How to Run
+## 🧠 AI Usage
 
-Instructions for running the project locally:
+We used ChatGPT to brainstorm absurd features, simulate meme logic, and write fake error messages for the payment "hack" screen.
+
+---
+
+## 🚀 How to Run
 
 ```bash
-# Example setup
-git clone https://github.com/your-username/code-and-chaos-project.git
-cd code-and-chaos-project
-npm install
-npm start
+git clone https://github.com/your-username/nosales.git
+cd nosales
+npm install # or skip if pure HTML/CSS/JS
+npm start   # or open index.html
 ````
-
-Or include instructions for Unity, Python, etc.
 
 ---
 
 ## 🎥 Demo
 
-Include a demo video or gif here if available:
-
-![demo](link-to-demo.gif)
-
-Or link to a YouTube/Drive video:
-📺 [Watch the 2-min Demo](https://example.com)
+📺 Watch the 2-minute walkthrough:
+[👉 Click here to view demo](https://example.com/nosales-demo)
 
 ---
 
-## 🏆 Hackathon Rules Recap
+## 🧙 Team
 
-* ⏱️ Time limit: 3 hours
-* 👥 Team size: Solo or Duo
-* 🧠 Theme: *A World Out of Sync*
-* ✅ Project must be functional and demoable
-* 📦 Submission: Code + Demo
+* **President Snow** (Game Master & Architect of Chaos)
+* **Your Name(s)**
 
 ---
 
-## 📌 Prompts / AI Usage (if applicable)
+## 🏁 Submission Details
 
-List any prompts used for code generation or AI suggestions (transparency encouraged).
+Created for the **Code & Chaos** 3-Hour Hackathon
+
+> 🕒 Time limit respected
+> 🎯 Theme: *A World Out of Sync*
+> ✅ Functional (barely)
+> 🎥 Demo provided
 
 ---
 
-## ✨ Credits
+## ⚠️ Disclaimer
 
-Team members:
-
-* **Name 1**
-* **Name 2**
-
-Made with ❤️ during *Code & Chaos* Hackathon
+Do **not** enter real payment info. This is satire. If your cart screams at you, it's working as intended.
 
 ```
 
-Let me know if you want a pre-filled README for a specific stack (e.g. Godot, React, Python CLI, etc.) or a template for submitting via GitHub Issues/Discussions!
+---
+
+Would you like a **meme audio embed script**, **glitch effect CSS**, or **fake credit card hijack screen template** to include in this project?
 ```

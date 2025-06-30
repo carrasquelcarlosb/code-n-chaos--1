@@ -118,7 +118,7 @@
 
 <!-- Hero Section -->
 <div class="hero from-primary to-secondary min-h-96 bg-gradient-to-r">
-	<div class="hero-content text-primary-content text-center">
+	<div class="hero-content text-primary-content text-center flex justify-center">
 		<div class="max-w-md">
 			<h1
 				class="mb-5 text-5xl font-bold"

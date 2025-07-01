@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { chaosLevel, cartItems } from '$lib/stores/chaos.js';
+	import { tick } from 'svelte';
 
 	// Featured products (ready for chaos)
 	let featuredProducts = [
@@ -60,7 +61,7 @@
 	});
 
 	// Basketball cart animation
-	function addToCart(product, index) {
+	/*function addToCart(product, index) {
 		// Add dramatic cart animation here later
 		cartItems.update((items) => [...items, product]);
 
@@ -70,7 +71,7 @@
 		}
 
 		console.log(`🏀 DUNK! ${product.name} ajouté au panier!`);
-	}
+	}*/
 
 	// Random achievement popups
 	let showingAchievement = false;
@@ -114,6 +115,50 @@
 		}
 		return product.price.toFixed(2);
 	}
+
+
+let showExplosion = false;
+let snipers = [];
+
+async function triggerChaosExplosion() {
+	//if ($chaosLevel < 3) return;
+
+	showExplosion = true;
+	snipers = [];
+
+	for (let i = 0; i < 6; i++) {
+		snipers.push({
+			top: Math.random() * 80 + 'vh',
+			left: Math.random() * 80 + 'vw',
+			rotation: Math.random() * 360,
+			delay: Math.random() * 500,
+			image: '/sniperTaGrandMere.png'
+		});
+	}
+
+	await tick();
+	setTimeout(() => {
+		showExplosion = false;
+		snipers = [];
+	}, 1500);
+}
+
+// Appelle cette fonction dans addToCart
+function addToCart(product, index) {
+	cartItems.update((items) => [...items, product]);
+
+		triggerChaosExplosion();
+
+
+	/*if ($chaosLevel >= 1) {
+		showRandomAchievement();
+	}
+	if ($chaosLevel >= 3) {
+		triggerChaosExplosion();
+	}*/
+
+	console.log(`🏀 DUNK! ${product.name} ajouté au panier!`);
+}
 </script>
 
 <!-- Hero Section -->
@@ -283,6 +328,26 @@
 	</div>
 {/if}
 
+{#if showExplosion}
+	<div class="chaos-overlay fixed inset-0 pointer-events-none z-50">
+		<div class="absolute inset-0 animate-epileptic-flash"></div>
+		{#each snipers as s}
+			<img
+				src={s.image}
+				class="absolute sniper-img"
+				style="
+					top: {s.top};
+					left: {s.left};
+					transform: rotate({s.rotation}deg);
+					animation-delay: {s.delay}ms;
+				"
+			/>
+		{/each}
+	</div>
+{/if}
+
+
+
 <style>
 	.chaos-text {
 		animation: glitch 0.3s infinite;
@@ -308,4 +373,67 @@
 			transform: translate(0);
 		}
 	}
+
+	.sniper-img {
+		width: 100px; /* ← rétrécis ici */
+		height: auto;
+		animation: moveSniper 0.3s ease-in-out infinite alternate;
+	}
+
+	.chaos-overlay {
+	animation: chaosFlash 2s infinite; /* ← moins fréquent et plus doux */
+}
+
+@keyframes chaosFlash {
+	0% { background-color: transparent; }
+	50% { background-color: rgba(255, 0, 255, 0.1); }
+	100% { background-color: transparent; }
+}
+
+
+@keyframes chaosScreenShake {
+	0% { transform: translate(0, 0) scale(1); }
+	25% { transform: translate(-10px, 10px) scale(1.05); }
+	50% { transform: translate(10px, -10px) scale(0.95); }
+	75% { transform: translate(-10px, -10px) scale(1.1); }
+	100% { transform: translate(10px, 10px) scale(0.9); }
+}
+
+@keyframes epilepticFlash {
+	0%   { background-color: red; }
+	25%  { background-color: yellow; }
+	50%  { background-color: blue; }
+	75%  { background-color: lime; }
+	100% { background-color: magenta; }
+}
+
+.animate-epileptic-flash {
+	width: 100%;
+	height: 100%;
+	animation: epilepticFlash 2s infinite;
+	opacity: 0.7;
+	mix-blend-mode: difference;
+}
+
+@keyframes sniperSpin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.sniper-img {
+	width: 100px;
+	height: auto;
+	position: absolute;
+	animation: sniperSpin 2s linear infinite;
+}
+
+@keyframes moveSniper {
+	0% {
+		transform: translate(0, 0) scale(1);
+	}
+	100% {
+		transform: translate(20px, -20px) scale(1.2);
+	}
+}
+
 </style>
